@@ -18,6 +18,7 @@ async function fetchWeather() {
   });
   document.getElementById("temp").textContent =
     `${latestTemp} °C kl. ${latestTime}`;
+
   // Lag dataserie for grafen
   const series = data.properties.timeseries.map((t) => ({
     time: new Date(t.time),

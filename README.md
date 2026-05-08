@@ -1,4 +1,4 @@
-# WebWeather
+# NordicWeather
 
 A small single-page app that fetches temperature forecast data from the MET (locationforecast) API and displays it as a line chart.
 

@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MET Vær</title>
+    <title>NordicWeather</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Temperatur data</h1>
+    <h1>NordicWeather</h1>
+    <h2>Temperatur data</h2>
     <!-- Input-felter for bredde- og lengdegrad -->
     <div class="fetch-container">
       <input
@@ -27,8 +28,8 @@
       />
       <button class="button__fetch" onclick="fetchWeather()">Hent</button>
     </div>
-    <p>Tromsø</p>
-    <p id="temp"></p>
+    <p class="bold">Tromsø</p>
+    <p class="bold" id="temp"></p>
     <p>Den inlagte bredden og lengden er for Tromsø.</p>
     <p id="location">tromsø teksten er ikke dynamisk</p>
     <p>
