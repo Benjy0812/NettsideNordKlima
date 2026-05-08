@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   // Uncomment the line below if you want to deploy to GitHub Pages or a subdirectory
-  // base: "/WebNordicWeather/",
+  //base: "/WebNordicWeather/",
   server: {
     watch: {
       usePolling: true, // Optional: for WSL2/Docker

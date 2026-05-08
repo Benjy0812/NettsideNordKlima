@@ -36,8 +36,15 @@ h2 {
   cursor: pointer;
 }
 
-.line-chart {
-  margin: 0 auto;
+.chart-container {
   width: 90%;
-  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 70vh; /* 70% of the viewport height */
+  min-height: 300px; /* Minimum height for small screens */
+}
+
+.line-chart {
+  width: 100%;
+  height: 100%;
 }

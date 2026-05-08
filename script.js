@@ -41,7 +41,7 @@ async function fetchWeather() {
         },
       ],
     },
-    options: { responsive: true, maintainAspectRatio: true },
+    options: { responsive: true, maintainAspectRatio: false },
   });
 
   return data;
