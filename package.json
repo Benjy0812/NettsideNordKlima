@@ -1,0 +1,19 @@
+{
+  "name": "webweather",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "vite": "^8.0.11",
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-css-order": "^2.2.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:open": "vite --open",
+    "format": "prettier --write .",
+    "build": "vite build",
+    "deploy": "gh-pages -d dist"
+  }
+}
