@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nordisk Vær</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-    <script type="module" crossorigin src="/WebNordicWeather/assets/index-C_rugl83.js"></script>
-    <link rel="stylesheet" crossorigin href="/WebNordicWeather/assets/index-CjuEuhs3.css">
+    <script type="module" crossorigin src="/WebNordicWeather/assets/index-z86GX7yv.js"></script>
+    <link rel="stylesheet" crossorigin href="/WebNordicWeather/assets/index-CtI1rlQa.css">
   </head>
   <body>
     <h1>Nordisk Vær</h1>
@@ -27,7 +27,8 @@
         value="18.9651"
         placeholder="Lengdegrad"
       />
-      <button class="button__fetch" onclick="fetchWeather()">Hent</button>
+      <button class="button" id="fetch-weather" type="button">Hent</button>
+      <button class="button" id="download-json">Download JSON</button>
     </div>
     <p class="bold">Tromsø</p>
     <p class="bold" id="temp"></p>
@@ -42,13 +43,11 @@
       <a href="https://www.yr.no">YR.no</a> bruker.
     </p>
     <p>
-      Du kan endre stedet ved å skrive inn andre bredde- og lengdegradverdier og
+      Du kan endre stedet ved å skrive inn andre bredde og lengdegradverdier og
       trykke på Hent knappen.
     </p>
     <!-- Grafen vises her -->
-    <div style="position: relative; height: 300px">
-      <canvas id="chart"></canvas>
-    </div>
+    <canvas class="line-chart" id="chart"></canvas>
     <footer>
       <p>
         &copy; Værdata fra <a href="https://www.met.no/">MET Norway</a> –
