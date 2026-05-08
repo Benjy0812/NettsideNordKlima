@@ -40,8 +40,11 @@ h2 {
   width: 90%;
   max-width: 800px;
   margin: 0 auto;
-  height: 70vh; /* 70% of the viewport height */
-  min-height: 300px; /* Minimum height for small screens */
+  height: 70vh;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .line-chart {
