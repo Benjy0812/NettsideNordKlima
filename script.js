@@ -1,41 +1,31 @@
 let chart;
 
 async function fetchWeather() {
-  // Get latitude and longitude from input fields, round to 4 decimals for better API caching
   const lat = parseFloat(document.getElementById("lat").value).toFixed(4);
   const lon = parseFloat(document.getElementById("lon").value).toFixed(4);
   const res = await fetch(
     `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${lat}&lon=${lon}`,
   );
   const data = await res.json();
+  const timeseries = data.properties.timeseries;
 
-  // Show location and latest temperature
-  const latest = data.properties.timeseries[0];
-  const latestTemp = latest.data.instant.details.air_temperature;
-  const latestTime = new Date(latest.time).toLocaleTimeString("no-NO", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  const latest = timeseries[0];
   document.getElementById("temp").textContent =
-    `${latestTemp} °C kl. ${latestTime}`;
+    `${latest.data.instant.details.air_temperature} °C kl. ` +
+    new Date(latest.time).toLocaleTimeString("no-NO", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
-  // Make a series of time and temperature for the next 24 hours (48 data points)
-  const series = data.properties.timeseries.map((t) => ({
-    time: new Date(t.time),
-    temp: t.data.instant.details.air_temperature,
-  }));
-
-  // Make labels and data arrays for Chart.js
-  const labels = series.map((d) =>
-    d.time.toLocaleString("no-NO", {
+  const labels = timeseries.map((t) =>
+    new Date(t.time).toLocaleString("no-NO", {
       weekday: "short",
       hour: "2-digit",
       minute: "2-digit",
     }),
   );
-  const temps = series.map((d) => d.temp);
+  const temps = timeseries.map((t) => t.data.instant.details.air_temperature);
 
-  // Render the chart, destroy previous if it exists
   if (chart) chart.destroy();
   chart = new Chart(document.getElementById("chart"), {
     type: "line",
@@ -51,9 +41,28 @@ async function fetchWeather() {
         },
       ],
     },
-    options: { responsive: true, maintainAspectRatio: false },
+    options: { responsive: true, maintainAspectRatio: true },
   });
+
+  return data;
 }
 
-// Get and show weather data when the page loads
+function downloadJSON(data, filename = "weather-data.json") {
+  const a = Object.assign(document.createElement("a"), {
+    href: URL.createObjectURL(
+      new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }),
+    ),
+    download: filename,
+  });
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+document
+  .getElementById("fetch-weather")
+  .addEventListener("click", () => fetchWeather());
+document
+  .getElementById("download-json")
+  .addEventListener("click", async () => downloadJSON(await fetchWeather()));
+
 fetchWeather();

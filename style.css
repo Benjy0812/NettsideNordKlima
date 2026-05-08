@@ -5,7 +5,6 @@ body {
 p,
 h1,
 h2 {
-  max-width: 25%;
   margin: 10px auto;
 }
 
@@ -25,14 +24,20 @@ h2 {
   margin: 4px;
 }
 
-.button__fetch {
+.button {
   margin: 4px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 4px;
 }
 
-.button__fetch:hover {
+.button:hover {
   background-color: #f0f0f0;
   cursor: pointer;
+}
+
+.line-chart {
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
 }
