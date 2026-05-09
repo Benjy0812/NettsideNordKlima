@@ -14,45 +14,45 @@ h2 {
 
 .fetch-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin: 0 auto;
   max-width: 100%;
 }
 
 .input__field {
+  flex: 1;
+  margin: 0;
   border: 1px solid #cccccc;
   border-radius: 4px;
   padding: 8px;
-  margin: 0;
-  flex: 1;
   min-width: 120px;
 }
 
 .button {
-  padding: 8px 12px;
-  background-color: #ffffff;
+  flex: 0 0 auto;
+  margin: 0;
   border: 1px solid #cccccc;
   border-radius: 4px;
-  margin: 0;
-  flex: 0 0 auto;
+  background-color: #ffffff;
+  padding: 8px 12px;
 }
 
 .button:hover {
-  background-color: #f0f0f0;
   cursor: pointer;
+  background-color: #f0f0f0;
 }
 
 .chart-container {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-  height: 70vh;
-  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  height: 70vh;
+  min-height: 300px;
 }
 
 .line-chart {
