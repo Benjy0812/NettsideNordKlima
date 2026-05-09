@@ -1,14 +1,12 @@
 {
   "name": "webweather",
-  "type": "module",
-  "private": true,
   "devDependencies": {
-    "@types/chart.js": "^4.0.1",
     "gh-pages": "^6.3.0",
     "prettier": "^3.8.3",
     "prettier-plugin-css-order": "^2.2.0",
     "vite": "^8.0.11"
   },
+  "private": true,
   "scripts": {
     "dev": "vite",
     "dev:open": "vite --open",
@@ -16,7 +14,5 @@
     "build": "vite build",
     "deploy": "gh-pages -d dist"
   },
-  "dependencies": {
-    "chart.js": "^4.5.1"
-  }
+  "type": "module"
 }
