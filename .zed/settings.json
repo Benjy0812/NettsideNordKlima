@@ -1,0 +1,13 @@
+{
+  "languages": {
+    "JavaScript": {
+      "tab_size": 2
+    },
+    "SCSS": {
+      "tab_size": 2
+    },
+    "HTML": {
+      "tab_size": 2
+    }
+  }
+}
