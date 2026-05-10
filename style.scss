@@ -12,13 +12,13 @@ h2 {
   font-weight: bold;
 }
 
-.fetch-container {
+.fetch__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 500px;
 }
 
 .input__field {
@@ -37,11 +37,10 @@ h2 {
   border-radius: 4px;
   background-color: #ffffff;
   padding: 8px 12px;
-}
-
-.button:hover {
-  cursor: pointer;
-  background-color: #f0f0f0;
+  &:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+  }
 }
 
 .chart-container {
