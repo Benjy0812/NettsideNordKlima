@@ -29,10 +29,15 @@
     </div>
     <p class="bold">Tromsø</p>
     <p class="bold" id="temp"></p>
+    <p class="bold" id="pressure"></p>
+    <p class="bold" id="humidity"></p>
+    <p class="bold" id="clouds"></p>
+    <p class="bold" id="wind"></p>
+    <p class="bold" id="symbol"></p>
     <p>Den inlagte bredden og lengden er for Tromsø.</p>
     <p>tromsø teksten er ikke dynamisk</p>
     <details>
-      <summary>Vis beskrivelse</summary>
+      <summary class="cursor-hover">Vis beskrivelse</summary>
       <p>
         Dette er et linjediagram som viser temperaturprognosen fra nåværende
         tidspunkt og opp til 9 dager frem i tid.
@@ -46,9 +51,9 @@
         og trykke på Hent knappen.
       </p>
     </details>
-    <!-- Grafen vises her -->
-    <div class="chart-container">
-      <canvas class="line-chart" id="chart"></canvas>
+    <div class="chart__container">
+      <!-- Chart shown here -->
+      <canvas class="line__chart" id="chart"></canvas>
     </div>
     <footer>
       <p>
