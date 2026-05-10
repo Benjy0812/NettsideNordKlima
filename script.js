@@ -6,7 +6,14 @@ async function fetchWeather(lat, lon) {
 }
 
 function displayCurrentWeather(data) {
-    const current = data.properties.timeseries[0];
-    const { air_pressure_at_sea_level, air_temperature, cloud_area_fraction, relative_humidity, wind_from_direction, wind_speed } = current.data.instant.details;
-    const symbolCode = current.data.next_1_hours.summary.symbol_code;
+  const current = data.properties.timeseries[0]
+  const {
+    air_pressure_at_sea_level,
+    air_temperature,
+    cloud_area_fraction,
+    relative_humidity,
+    wind_from_direction,
+    wind_speed,
+  } = current.data.instant.details
+  const symbolCode = current.data.next_1_hours.summary.symbol_code
 }
