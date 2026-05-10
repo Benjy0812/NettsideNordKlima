@@ -8,9 +8,8 @@
   </head>
   <body>
     <h1>Nordisk Vær</h1>
-    <h2>Temperatur data</h2>
-    <!-- Input-felter for bredde- og lengdegrad -->
-    <div class="fetch-container">
+    <!-- Input-felter for bredde og lengdegrad -->
+    <div class="fetch__container">
       <input
         class="input__field"
         type="text"
@@ -26,24 +25,27 @@
         placeholder="Lengdegrad"
       />
       <button class="button" id="fetch-weather" type="button">Hent</button>
-      <button class="button" id="download-json">Download JSON</button>
+      <button class="button" id="download-json">Last ned JSON</button>
     </div>
     <p class="bold">Tromsø</p>
     <p class="bold" id="temp"></p>
     <p>Den inlagte bredden og lengden er for Tromsø.</p>
-    <p id="location">tromsø teksten er ikke dynamisk</p>
-    <p>
-      Dette er et linjediagram som viser temperaturprognosen fra nåværende
-      tidspunkt og opp til 9 dager frem i tid.
-    </p>
-    <p>
-      Data hentes fra MET sitt vær-API, det samme som
-      <a href="https://www.yr.no">YR.no</a> bruker.
-    </p>
-    <p>
-      Du kan endre stedet ved å skrive inn andre bredde og lengdegradverdier og
-      trykke på Hent knappen.
-    </p>
+    <p>tromsø teksten er ikke dynamisk</p>
+    <details>
+      <summary>Vis beskrivelse</summary>
+      <p>
+        Dette er et linjediagram som viser temperaturprognosen fra nåværende
+        tidspunkt og opp til 9 dager frem i tid.
+      </p>
+      <p>
+        Data hentes fra MET sitt vær-API, det samme som
+        <a href="https://www.yr.no">YR.no</a> bruker.
+      </p>
+      <p>
+        Du kan endre stedet ved å skrive inn andre bredde og lengdegradverdier
+        og trykke på Hent knappen.
+      </p>
+    </details>
     <!-- Grafen vises her -->
     <div class="chart-container">
       <canvas class="line-chart" id="chart"></canvas>
