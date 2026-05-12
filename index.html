@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nordisk Vær</title>
-    <link rel="stylesheet" href="style.scss" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Nordisk Vær</h1>
@@ -29,7 +29,9 @@
       <button class="button" id="download-json">Last ned JSON</button>
     </div>
     <p class="bold">Tromsø</p>
-    <div class="cursor-pointer weather__container">
+    <div
+      class="weather__container transform-gpu *:cursor-pointer will-change-transform *:transition-transform *:duration-100 *:hover:scale-125"
+    >
       <p class="bold" id="temp"></p>
       <p class="bold" id="pressure"></p>
       <p class="bold" id="humidity"></p>
@@ -40,7 +42,7 @@
     <p>Den inlagte bredden og lengden er for Tromsø.</p>
     <p>tromsø teksten er ikke dynamisk</p>
     <details>
-      <summary class="cursor-hover">Vis beskrivelse</summary>
+      <summary class="cursor-pointer">Vis beskrivelse</summary>
       <p>
         Dette er et linjediagram som viser temperaturprognosen fra nåværende
         tidspunkt og opp til 9 dager frem i tid.
