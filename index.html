@@ -30,25 +30,27 @@
     </div>
     <p class="bold">Tromsø</p>
     <div
-      class="weather__container transform-gpu *:cursor-pointer will-change-transform *:transition-transform *:duration-100 *:hover:scale-125"
+      class="weather__container transform-gpu will-change-transform *:cursor-pointer *:transition-transform *:duration-100 *:hover:scale-125"
     >
-      <p class="bold" id="temp"></p>
-      <p class="bold" id="pressure"></p>
-      <p class="bold" id="humidity"></p>
-      <p class="bold" id="clouds"></p>
-      <p class="bold" id="wind"></p>
-      <p class="bold" id="symbol"></p>
+      <p class="bold" id="temp">Temp: 0.0 °C</p>
+      <p class="bold" id="pressure">Pressure: 0 hPa</p>
+      <p class="bold" id="humidity">Humidity: 00.0 %</p>
+      <p class="bold" id="clouds">Clouds: 00.0 %</p>
+      <p class="bold" id="wind">Wind: 0.0 m/s from 00°</p>
+      <p class="bold" id="symbol">Weather: type</p>
     </div>
-    <p>Den inlagte bredden og lengden er for Tromsø.</p>
+    <p>Den innlagte bredden og lengden er for Tromsø.</p>
     <p>tromsø teksten er ikke dynamisk</p>
     <details>
-      <summary class="cursor-pointer">Vis beskrivelse</summary>
+      <summary class="bold inline-block cursor-pointer">
+        Trykk for beskrivelse
+      </summary>
       <p>
         Dette er et linjediagram som viser temperaturprognosen fra nåværende
         tidspunkt og opp til 9 dager frem i tid.
       </p>
       <p>
-        Data hentes fra MET sitt vær-API, det samme som
+        Data hentes fra MET sin vær-API, det samme som
         <a href="https://www.yr.no">YR.no</a> bruker.
       </p>
       <p>
