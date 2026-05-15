@@ -4,5 +4,4 @@
   "printWidth": 80,
   "tabWidth": 2,
   "plugins": ["prettier-plugin-css-order", "prettier-plugin-tailwindcss"],
-  
 }
