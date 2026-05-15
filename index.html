@@ -9,24 +9,15 @@
   <body>
     <h1>Nordisk Vær</h1>
     <div class="fetch__container">
-      <label for="lat">Breddegrad:</label>
       <input
         class="input__field"
         type="text"
-        id="lat"
-        value="69.6779"
-        placeholder="Breddegrad"
+        id="location-input"
+        value="Tromsø"
+        placeholder="Lokasjon"
       />
-      <label for="lon">Lengdegrad:</label>
-      <input
-        class="input__field"
-        type="text"
-        id="lon"
-        value="18.9651"
-        placeholder="Lengdegrad"
-      />
-      <button class="button" id="fetch-weather" type="button">Hent</button>
-      <button class="button" id="download-json">Last ned JSON</button>
+      <button class="button" id="fetch-button" type="button">Hent</button>
+      <button class="button" id="download-button">Last ned JSON</button>
     </div>
     <select class="absolute top-0 right-0" id="city-select">
       <option value="Celsius">°C</option>
@@ -36,12 +27,12 @@
     <div
       class="weather__container transform-gpu will-change-transform *:cursor-pointer *:transition-transform *:duration-100 *:hover:scale-125"
     >
-      <p class="bold" id="temp">Temp: 0.0 °C</p>
-      <p class="bold" id="pressure">Pressure: 0 hPa</p>
-      <p class="bold" id="humidity">Humidity: 00.0 %</p>
-      <p class="bold" id="clouds">Clouds: 00.0 %</p>
-      <p class="bold" id="wind">Wind: 0.0 m/s from 00°</p>
-      <p class="bold" id="symbol">Weather: type</p>
+      <p class="bold" id="temp">Tempratur: 0.0 °C</p>
+      <p class="bold" id="pressure">Trykk: 0 hPa</p>
+      <p class="bold" id="humidity">Luftfuktighet: 00.0 %</p>
+      <p class="bold" id="clouds">Skyer: 00.0 %</p>
+      <p class="bold" id="wind">Vind: 0.0 m/s fra 00°</p>
+      <p class="bold" id="symbol">Vær: type</p>
     </div>
     <p>Den innlagte bredden og lengden er for Tromsø.</p>
     <p>tromsø teksten er ikke dynamisk</p>
