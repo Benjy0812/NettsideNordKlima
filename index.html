@@ -4,51 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nordisk Vær</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-    <script type="module" crossorigin src="/WebNordicWeather/assets/index-vC5L6kOI.js"></script>
-    <link rel="stylesheet" crossorigin href="/WebNordicWeather/assets/index-oB1UFkHw.css">
+    <script type="module" crossorigin src="/WebNordicWeather/assets/index-Bsyht7KV.js"></script>
+    <link rel="stylesheet" crossorigin href="/WebNordicWeather/assets/index-gm6De_0s.css">
   </head>
   <body>
     <h1>Nordisk Vær</h1>
-    <h2>Temperatur data</h2>
-    <!-- Input-felter for bredde- og lengdegrad -->
-    <div class="fetch-container">
+    <div class="fetch__container">
       <input
         class="input__field"
         type="text"
-        id="lat"
-        value="69.6779"
-        placeholder="Breddegrad"
+        id="location-input"
+        value="Tromsø"
+        placeholder="Lokasjon"
+        aria-label="Lokasjon"
       />
-      <input
-        class="input__field"
-        type="text"
-        id="lon"
-        value="18.9651"
-        placeholder="Lengdegrad"
-      />
-      <button class="button" id="fetch-weather" type="button">Hent</button>
-      <button class="button" id="download-json">Download JSON</button>
+      <button class="button" id="fetch-button" type="button">Hent</button>
+      <button class="button" id="download-button">Last ned JSON</button>
     </div>
+    <select class="absolute top-0 right-0" id="city-select">
+      <option value="Celsius">°C</option>
+      <option value="Fahrenheit">°F</option>
+    </select>
     <p class="bold">Tromsø</p>
-    <p class="bold" id="temp"></p>
-    <p>Den inlagte bredden og lengden er for Tromsø.</p>
-    <p id="location">tromsø teksten er ikke dynamisk</p>
-    <p>
-      Dette er et linjediagram som viser temperaturprognosen fra nåværende
-      tidspunkt og opp til 9 dager frem i tid.
-    </p>
-    <p>
-      Data hentes fra MET sitt vær-API, det samme som
-      <a href="https://www.yr.no">YR.no</a> bruker.
-    </p>
-    <p>
-      Du kan endre stedet ved å skrive inn andre bredde og lengdegradverdier og
-      trykke på Hent knappen.
-    </p>
-    <!-- Grafen vises her -->
-    <div class="chart-container">
-      <canvas class="line-chart" id="chart"></canvas>
+    <div
+      class="weather__container transform-gpu will-change-transform *:cursor-pointer *:transition-transform *:duration-100 *:hover:scale-125"
+    >
+      <p class="bold" id="temp">Temperatur: 0.0 °C</p>
+      <p class="bold" id="pressure">Trykk: 0 hPa</p>
+      <p class="bold" id="humidity">Luftfuktighet: 00.0 %</p>
+      <p class="bold" id="clouds">Skyer: 00.0 %</p>
+      <p class="bold" id="wind">Vind: 0.0 m/s fra 00°</p>
+      <p class="bold" id="symbol">Vær: type</p>
+    </div>
+    <p>Den innlagte bredden og lengden er for Tromsø.</p>
+    <p>tromsø teksten er ikke dynamisk</p>
+    <details>
+      <summary class="bold inline-block cursor-pointer">
+        Trykk for beskrivelse
+      </summary>
+      <p>
+        Dette er et linjediagram som viser temperaturprognosen fra nåværende
+        tidspunkt og opp til 9 dager frem i tid.
+      </p>
+      <p>
+        Data hentes fra MET sin vær-API, det samme som
+        <a href="https://www.yr.no">YR.no</a> bruker.
+      </p>
+      <p>
+        Du kan endre stedet ved å skrive inn andre bredde og lengdegradverdier
+        og trykke på Hent knappen.
+      </p>
+    </details>
+    <div class="chart__container">
+      <!-- Chart shown here -->
+      <canvas class="line__chart" id="chart"></canvas>
     </div>
     <footer>
       <p>
