@@ -1,11 +1,14 @@
 // Fetch location data from the Nominatim API based on user input
 async function getLocation(place) {
-  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`
-  const response = await fetch(url, {
-    headers: { 'User-Agent': 'NordKlima/0.1 ' },
-  })
+  const response = await fetch(
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1&email=developer.cause102@passmail.net`,
+  )
   if (!response.ok) throw new Error('Failed to get location')
   return await response.json()
+}
+
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
 }
 
 // Extract latitude and longitude from the location data
@@ -16,10 +19,9 @@ function getCordsFromLocations(location) {
 
 // Fetch weather data from the Norwegian Meteorological Institute API and display it on the page
 async function fetchWeather(lat, lon) {
-  const url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${lat}&lon=${lon}`
-  const response = await fetch(url, {
-    headers: { 'User-Agent': 'NordKlima/0.1' },
-  })
+  const response = await fetch(
+    `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${lat}&lon=${lon}`,
+  )
   if (!response.ok) throw new Error('Failed to fetch weather')
   return await response.json()
 }
@@ -50,10 +52,12 @@ function displayCurrentWeather(data) {
   document.getElementById('symbol').textContent = `Weather: ${symbolCode}`
 }
 
-const fetchButton = document.getElementById('fetch-button')
-fetchButton.addEventListener('click', async () => {
+async function getWeather() {
   // Get the location input from the user
   const locationName = document.getElementById('location-input').value.trim()
+  const capitalizedLocationName = capitalizeFirstLetter(locationName)
+  document.getElementById('location-title').textContent =
+    capitalizedLocationName
   if (!locationName) {
     alert('Please enter a location')
     return
@@ -72,4 +76,9 @@ fetchButton.addEventListener('click', async () => {
     console.error(err)
     alert(err.message)
   }
-})
+}
+
+window.onload = () => getWeather()
+
+const fetchButton = document.getElementById('fetch-button')
+fetchButton.addEventListener('click', () => getWeather())
