@@ -40,16 +40,17 @@ function displayCurrentWeather(data) {
   const symbolCode = current.data.next_1_hours.summary.symbol_code
 
   // Update the DOM elements with the fetched weather data
-  document.getElementById('temp').textContent = `Temp: ${air_temperature} °C`
+  document.getElementById('temp').textContent =
+    `Temperatur: ${air_temperature} °C`
   document.getElementById('pressure').textContent =
-    `Pressure: ${air_pressure_at_sea_level} hPa`
+    `Tryk: ${air_pressure_at_sea_level} hPa`
   document.getElementById('humidity').textContent =
-    `Humidity: ${relative_humidity} %`
+    `Luftfuktighet: ${relative_humidity} %`
   document.getElementById('clouds').textContent =
-    `Clouds: ${cloud_area_fraction} %`
+    `Skyer: ${cloud_area_fraction} %`
   document.getElementById('wind').textContent =
-    `Wind: ${wind_speed} m/s from ${wind_from_direction}°`
-  document.getElementById('symbol').textContent = `Weather: ${symbolCode}`
+    `Vind: ${wind_speed} m/s fra ${wind_from_direction}°`
+  document.getElementById('symbol').textContent = `Vær: ${symbolCode}`
 }
 
 async function getWeather() {
