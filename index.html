@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nordisk Vær</title>
-    <script type="module" crossorigin src="/NettsideNordKlima/assets/index-Bsyht7KV.js"></script>
+    <script type="module" crossorigin src="/NettsideNordKlima/assets/index-CPt9vI3l.js"></script>
     <link rel="stylesheet" crossorigin href="/NettsideNordKlima/assets/index-gm6De_0s.css">
   </head>
   <body>
@@ -25,7 +25,7 @@
       <option value="Celsius">°C</option>
       <option value="Fahrenheit">°F</option>
     </select>
-    <p class="bold">Tromsø</p>
+    <p class="bold" id="location-title">Tromsø</p>
     <div
       class="weather__container transform-gpu will-change-transform *:cursor-pointer *:transition-transform *:duration-100 *:hover:scale-125"
     >
@@ -36,8 +36,6 @@
       <p class="bold" id="wind">Vind: 0.0 m/s fra 00°</p>
       <p class="bold" id="symbol">Vær: type</p>
     </div>
-    <p>Den innlagte bredden og lengden er for Tromsø.</p>
-    <p>tromsø teksten er ikke dynamisk</p>
     <details>
       <summary class="bold inline-block cursor-pointer">
         Trykk for beskrivelse
@@ -51,8 +49,9 @@
         <a href="https://www.yr.no">YR.no</a> bruker.
       </p>
       <p>
-        Du kan endre stedet ved å skrive inn andre bredde og lengdegradverdier
-        og trykke på Hent knappen.
+        Du kan skrive inn hvilken som helst lokasjon i verden, så lenge den er
+        registret hos openStreetMap. Det er også mulig å velge mellom Celsius og
+        Fahrenheit WIP.
       </p>
     </details>
     <div class="chart__container">
