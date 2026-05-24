@@ -13,6 +13,7 @@ You’re in a great spot already. This roadmap is based on your current weather 
 ## What to learn next
 
 ### 1) App structure (biggest upgrade)
+
 Split `script.js` into modules:
 
 - `api.js`
@@ -21,6 +22,7 @@ Split `script.js` into modules:
 - `main.js`
 
 ### 2) State management (no framework yet)
+
 Use one state object for:
 
 - selected city
@@ -56,6 +58,7 @@ Render from state instead of scattered DOM writes.
 - better ARIA labels
 
 ### 7) Testing basics
+
 Start with pure helper functions:
 
 - `celsiusToFahrenheit()`
@@ -196,11 +199,14 @@ Render buttons from array and reuse `loadWeather(city)` on click.
 Save:
 
 ```js
-localStorage.setItem('weather_settings', JSON.stringify({
-  city: state.city,
-  unit: state.unit,
-  recent: state.recent,
-}))
+localStorage.setItem(
+  'weather_settings',
+  JSON.stringify({
+    city: state.city,
+    unit: state.unit,
+    recent: state.recent,
+  }),
+)
 ```
 
 Restore on startup:
@@ -248,7 +254,10 @@ Pattern:
 ```js
 navigator.geolocation.getCurrentPosition(
   async ({ coords }) => {
-    const raw = await getForecast({ lat: coords.latitude, lon: coords.longitude })
+    const raw = await getForecast({
+      lat: coords.latitude,
+      lon: coords.longitude,
+    })
     state.weather = normalizeWeather(raw)
     render(state)
   },
@@ -289,6 +298,7 @@ return timeseries.map((t) => ({
 10. Final cleanup + deploy
 
 If you get stuck, debug in this order:
+
 - check console errors first
 - log API response shape
 - test helper functions separately
@@ -297,19 +307,23 @@ If you get stuck, debug in this order:
 ## Suggested 4-week plan
 
 ### Week 1
+
 - Refactor into modules
 - Add loading + error states
 
 ### Week 2
+
 - Add unit toggle
 - Add `localStorage`
 - Add recent searches
 
 ### Week 3
+
 - Add chart metric switching
 - Add geolocation support
 
 ### Week 4
+
 - Add helper-function tests
 - Polish UI
 - Deploy

@@ -1,22 +1,14 @@
 {
+  "format_on_save": "off",
   "languages": {
     "JavaScript": {
       "tab_size": 2
     },
-    "SCSS": {
+    "CSS": {
       "tab_size": 2
     },
     "HTML": {
       "tab_size": 2
-    }
-  },
-  "lsp": {
-    "tailwindcss-language-server": {
-      "settings": {
-        "experimental": {
-          "classRegex": ["class=\"([^\"]*)\""]
-        }
-      }
     }
   }
 }

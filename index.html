@@ -20,7 +20,10 @@
       <button class="button" id="fetch-button" type="button">Hent</button>
       <button class="button" id="download-button">Last ned JSON</button>
     </div>
-    <select class="absolute top-0 right-0" id="city-select">
+    <select
+      class="absolute top-0 right-0 m-1 cursor-pointer rounded-md border border-gray-500"
+      id="city-select"
+    >
       <option value="Celsius">°C</option>
       <option value="Fahrenheit">°F</option>
     </select>
@@ -35,7 +38,7 @@
       <p class="bold" id="wind">Vind: 0.0 m/s fra 00°</p>
       <p class="bold" id="symbol">Vær: type</p>
     </div>
-    <details>
+    <details class="mt-2">
       <summary class="bold inline-block cursor-pointer">
         Trykk for beskrivelse
       </summary>
@@ -64,6 +67,6 @@
         <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
       </p>
     </footer>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
