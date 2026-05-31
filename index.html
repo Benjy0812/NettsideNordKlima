@@ -6,18 +6,24 @@
     <title>Nordisk Vær</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>Nordisk Vær</h1>
-    <div class="fetch__container">
+  <body class="text-center font-[Arial,Helvetica,sans-serif]">
+    <h1 class="mx-auto my-2.5">Nordisk Vær</h1>
+    <div class="mx-auto my-0 flex max-w-125 flex-wrap justify-center gap-2">
       <input
-        class="input__field"
+        class="m-0 min-w-30 flex-1 rounded border border-[#cccccc] p-2"
         type="text"
         id="location-input"
         value="Tromsø"
         placeholder="Lokasjon"
         aria-label="Lokasjon"
       />
-      <button class="button" id="fetch-button" type="button">Hent</button>
+      <button
+        class="m-0 flex rounded border border-[#cccccc] bg-white px-3 py-2 hover:cursor-pointer hover:bg-[#f0f0f0]"
+        id="fetch-button"
+        type="button"
+      >
+        Hent
+      </button>
       <select
         class="w-15 rounded-md border border-gray-500 text-center"
         id="temp-toggle"
@@ -26,38 +32,58 @@
         <option value="Fahrenheit">°F</option>
       </select>
     </div>
-    <p class="bold" id="location-title">Tromsø</p>
+    <p class="mx-auto my-2.5 font-bold" id="location-title">Tromsø</p>
     <div
-      class="weather__container transform-gpu will-change-transform *:cursor-pointer *:transition-transform *:duration-100 *:hover:scale-125"
+      class="inline-flex transform-gpu flex-col items-center gap-2 will-change-transform *:cursor-pointer *:transition-transform *:duration-100 *:hover:scale-125"
     >
-      <p class="bold" id="temp">Temperatur: 0.0 °C</p>
-      <p class="bold" id="pressure">Trykk: 0 hPa</p>
-      <p class="bold" id="humidity">Luftfuktighet: 00.0 %</p>
-      <p class="bold" id="clouds">Skyer: 00.0 %</p>
-      <p class="bold" id="wind">Vind: 0.0 m/s fra 00°</p>
-      <p class="bold" id="symbol">Vær: type</p>
+      <p
+        class="m-0 inline-block w-fit rounded p-1.25 font-bold shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        id="temp"
+      >
+        Temperatur: 0.0 °C
+      </p>
+      <p
+        class="m-0 inline-block w-fit rounded p-1.25 font-bold shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        id="pressure"
+      >
+        Trykk: 0 hPa
+      </p>
+      <p
+        class="m-0 inline-block w-fit rounded p-1.25 font-bold shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        id="humidity"
+      >
+        Luftfuktighet: 00.0 %
+      </p>
+      <p
+        class="m-0 inline-block w-fit rounded p-1.25 font-bold shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        id="clouds"
+      >
+        Skyer: 00.0 %
+      </p>
+      <p
+        class="m-0 inline-block w-fit rounded p-1.25 font-bold shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        id="wind"
+      >
+        Vind: 0.0 m/s fra 00°
+      </p>
+      <p
+        class="m-0 inline-block w-fit rounded p-1.25 font-bold shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        id="symbol"
+      >
+        Vær: type
+      </p>
     </div>
-    <details class="mt-2">
-      <summary class="bold inline-block cursor-pointer">
-        Trykk for beskrivelse
-      </summary>
-      <p>
-        Dette er et linjediagram som viser temperaturprognosen fra nåværende
-        tidspunkt og opp til 9 dager frem i tid.
-      </p>
-      <p>
-        Data hentes fra MET sin vær-API, det samme som
-        <a href="https://www.yr.no">YR.no</a> bruker.
-      </p>
-      <p>
-        Du kan skrive inn hvilken som helst lokasjon i verden, så lenge den er
-        registret hos openStreetMap. Det er også mulig å velge mellom Celsius og
-        Fahrenheit WIP.
-      </p>
-    </details>
-    <canvas id="arrow" width="100" height="100" class=""></canvas>
+    <div class="flex flex-col items-center gap-2 t-">
+      <p>Wind direction:</p>
+      <canvas
+        class="rounded-2xl border border-gray-500"
+        id="arrow"
+        width="100"
+        height="100"
+      ></canvas>
+    </div>
     <footer>
-      <p>
+      <p class="mx-auto my-2.5">
         &copy; Værdata fra <a href="https://www.met.no/">MET Norway</a> –
         lisensiert under
         <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
