@@ -1,6 +1,6 @@
 import { getLocation, fetchWeather } from './api.js'
 import { capitalizeFirstLetter, displayCurrentWeather } from './ui.js'
-import { getCordsFromLocations } from './state.js'
+import { getCordsFromLocation } from './state.js'
 
 async function getWeather() {
   // Get the location input from the user
@@ -19,7 +19,7 @@ async function getWeather() {
       throw new Error('Location not found')
     }
     // then fetch and display the weather data
-    const { lat, lon } = getCordsFromLocations(locationCordinates)
+    const { lat, lon } = getCordsFromLocation(locationCordinates)
     const weatherData = await fetchWeather(lat, lon)
     displayCurrentWeather(weatherData)
   } catch (err) {
